@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route,  Link } from 'react-router-dom';
 
 import MyReports from './pages/MyReports';
-import BugReports from './pages/BugReports';
+import BugReports from './pages/BugReports/BugReports';
 import FixDocs from './pages/FixDocs';
 import HomePage from './HomePage';
 import './App.css';

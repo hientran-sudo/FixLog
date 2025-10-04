@@ -102,3 +102,22 @@
   margin-top: 40px;
   color: #777;
 }
+
+.navbar {
+  background-color: #61dafb;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #0056b3;
+}

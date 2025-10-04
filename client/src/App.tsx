@@ -8,9 +8,9 @@ import './App.css';
 function App() {
   return (   
     <Router>
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/reports">My Reports</Link> |{" "}
+      <nav className='navbar'>
+        <Link to="/">Home</Link> {" "}
+        <Link to="/reports">My Reports</Link> {" "}
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />

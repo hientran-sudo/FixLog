@@ -43,13 +43,19 @@ export default function HomePage() {
             <h2>Bug Report</h2>
             <p>Bug reporting details like error message, environment, version, logs, etc
             </p>
-            <button className="section-button orange">Create</button>
+            <button className="section-button orange"
+            onClick={() => navigate('/bugreports')}
+            >
+              Create</button>
           </section>
 
           <section id="contact" className="grid-item">
             <h2>Fix Documentation</h2>
             <p>Document the steps to reproduce the issue, what was tried to fix it, and the result of each attempt</p>
-            <button className="section-button green">Create</button>
+            <button className="section-button green"
+            onClick={() => navigate('/fixdocs')}
+            >
+              Create</button>
           </section>
         </div>
       </main>

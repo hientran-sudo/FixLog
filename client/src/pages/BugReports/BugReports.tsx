@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import  './BugReports.css';
+import './BugReports.css';
 
 function BugReportWizard() {
   const [step, setStep] = useState(0);
@@ -12,6 +12,8 @@ function BugReportWizard() {
     stepsToReproduce: "1. Open app 2. Click login button", // Default Steps
     browser: "Chrome", // Default Browser
   });
+
+  const [submitted, setSubmitted] = useState(false); // To track if the form is submitted
 
   const steps = [
     {
@@ -111,6 +113,25 @@ function BugReportWizard() {
     if (step > 0) setStep(step - 1);
   };
 
+  const handleSubmit = () => {
+    setSubmitted(true); // Mark the form as submitted
+  };
+
+  if (submitted) {
+    return (
+      <div className="submission-success">
+        <h3>Bug Report Submitted!</h3>
+        <p>Your bug report has been successfully submitted.
+            <br />
+            You can proceed to the troubleshooting page to investigate the issue:
+        </p>
+        <p> 
+          <a href="/fixdocs" className="btn-troubleshoot">Go to Troubleshooting</a>
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="bug-report-wizard">
       <h2>Bug Report Wizard</h2>
@@ -129,7 +150,7 @@ function BugReportWizard() {
             Next
           </button>
         ) : (
-          <button onClick={() => alert('Bug Report Submitted!')} className="btn-submit">
+          <button onClick={handleSubmit} className="btn-submit">
             Submit
           </button>
         )}

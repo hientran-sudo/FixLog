@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route,  Link } from 'react-router-dom'
 
 import MyReports from './pages/MyReports';
 import BugReports from './pages/BugReports/BugReports';
-import FixDocs from './pages/FixDocs';
+import FixDocs from './pages/FixDocs/FixDocs';
 import HomePage from './HomePage';
 import './App.css';
 

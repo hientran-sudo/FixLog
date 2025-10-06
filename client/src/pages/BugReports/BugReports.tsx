@@ -119,7 +119,7 @@ function BugReportWizard() {
 
   if (submitted) {
     return (
-      <div className="submission-success">
+      <div className="bug-report-wizard">
         <h3>Bug Report Submitted!</h3>
         <p>Your bug report has been successfully submitted.
             <br />

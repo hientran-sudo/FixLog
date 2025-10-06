@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-/*import './FixDocs.css';*/
+import './FixDocs.css';
 
 function FixDocsWizard() {
   const [step, setStep] = useState(0);
@@ -110,18 +110,18 @@ function FixDocsWizard() {
 
   if (submitted) {
     return (
-      <div className="submission-success">
+      <div className="fix-doc-wizard">
         <h3>Documentation Submitted!</h3>
         <p>Your troubleshooting documentation has been successfully submitted.</p>
         <p>
-          <a href="/home" className="btn-home">Return to Home</a>
+          <a href="/" className="btn-home">Return to Home</a>
         </p>
       </div>
     );
   }
 
   return (
-    <div className="fix-docs-wizard">
+    <div className="fix-doc-wizard">
       <h2>Troubleshooting Documentation Wizard</h2>
       <div className="step">
         <h3>{steps[step].title}</h3>

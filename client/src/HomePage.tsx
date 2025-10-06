@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <section id="contact" className="grid-item">
             <h2>Fix Documentation</h2>
-            <p>Document the steps to reproduce the issue, what was tried to fix it, and the result of each attempt</p>
+            <p>Document the steps, what was tried to fix it, and the result of each attempt</p>
             <button className="section-button green"
             onClick={() => navigate('/fixdocs')}
             >

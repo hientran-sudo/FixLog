@@ -113,9 +113,25 @@ function BugReportWizard() {
     if (step > 0) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    setSubmitted(true); // Mark the form as submitted
-  };
+  const handleSubmit = async () => {
+  try {
+    const response = await fetch("http://localhost:5000/api/bug-report", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      const data = await response.json();
+      alert(`Error: ${data.error}`);
+    }
+  } catch (error) {
+    alert(`Submission failed`);
+  }
+};
+
 
   if (submitted) {
     return (

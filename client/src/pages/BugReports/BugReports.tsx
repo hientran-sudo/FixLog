@@ -4,13 +4,12 @@ import './BugReports.css';
 function BugReportWizard() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
-    issueTitle: "Login button not responsive", // Default Title
+    title: "Login button not responsive", // Default Title
     description: "When I click the login button, nothing happens.", // Default Description
-    envDetails: "OS version, browser, frameworks",
-    errorMessage: "Copy and paste from logs",
+    error_trace: "Copy and paste from logs",
+    environment: "OS version, browser, frameworks",
     severity: "High", // Default Severity
-    stepsToReproduce: "1. Open app 2. Click login button", // Default Steps
-    browser: "Chrome", // Default Browser
+    reproducibility: "1. Open app 2. Click login button", // Default Steps // Default Browser
   });
 
   const [submitted, setSubmitted] = useState(false); // To track if the form is submitted
@@ -22,8 +21,8 @@ function BugReportWizard() {
         <input
           type="text"
           placeholder="Enter bug title"
-          value={formData.issueTitle}
-          onChange={(e) => setFormData({ ...formData, issueTitle: e.target.value })}
+          value={formData.title}
+          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
         />
       ),
     },
@@ -38,37 +37,23 @@ function BugReportWizard() {
       ),
     },
     {
-      title: "Error Message",
-      content: (
-        <textarea
-          placeholder="Copy and paste from logs"
-          value={formData.errorMessage}
-          onChange={(e) => setFormData({ ...formData, errorMessage: e.target.value })}
-        />
-      ),
-    },
-    {
       title: "Environment Details",
       content: (
         <textarea
           placeholder="OS version, browser, frameworks"
-          value={formData.envDetails}
-          onChange={(e) => setFormData({ ...formData, envDetails: e.target.value })}
+          value={formData.environment}
+          onChange={(e) => setFormData({ ...formData, environment: e.target.value })}
         />
       ),
     },
     {
-      title: "Browser",
+      title: "Error Message",
       content: (
-        <select
-          value={formData.browser}
-          onChange={(e) => setFormData({ ...formData, browser: e.target.value })}
-        >
-          <option value="Chrome">Chrome</option>
-          <option value="Firefox">Firefox</option>
-          <option value="Safari">Safari</option>
-          <option value="Edge">Edge</option>
-        </select>
+        <textarea
+          placeholder="Copy and paste from logs"
+          value={formData.error_trace}
+          onChange={(e) => setFormData({ ...formData, error_trace: e.target.value })}
+        />
       ),
     },
     {
@@ -90,8 +75,8 @@ function BugReportWizard() {
       content: (
         <textarea
           placeholder="List steps to reproduce the bug"
-          value={formData.stepsToReproduce}
-          onChange={(e) => setFormData({ ...formData, stepsToReproduce: e.target.value })}
+          value={formData.reproducibility}
+          onChange={(e) => setFormData({ ...formData, reproducibility: e.target.value })}
         />
       ),
     },
